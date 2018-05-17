@@ -58,7 +58,7 @@ Alright, let's make it happen.
   - Put the `name` or `id` in either the **query string** or the **body** of the `POST` request we're making. Try both!
   - Once we click the submit button, and our `POST` request is sent, make sure that we're receiving a `200` (a success) status code in response to our AJAX request. You'll need to chain another function to your AJAX request in addition to `.done`, called `.fail`. `.done` is triggered when the request completes successfully, `.fail` when it does not. If you're getting back a different status code, something isn't quite right with your request, review the codes listed out above.
 
-3. Now that we can vote, add a **"Refresh"** button or link to the `index.html` file. Create a `click` event handler for this button in election.js. When it's clicked, update the vote counts of the various candidates. You'll have to update the existing <li> elements now instead of appending.
+3. Now that we can vote, add a **"Refresh"** button or link to the `index.html` file. Create a `click` event handler for this button in election.js. When it's clicked, update the vote counts of the various candidates. You'll have to update the existing `<li>` elements now instead of appending.
 
 4. **STRETCH:**
 
