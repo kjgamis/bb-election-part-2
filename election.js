@@ -33,13 +33,36 @@ document.addEventListener("DOMContentLoaded", function() {
         var h4Tag      = document.createElement('h4');
         h3Tag.innerText = "Name: " + responseData.candidates[index].name;
         h4Tag.innerText = "Votes: " + responseData.candidates[index].votes;
+
         liTag.append(h3Tag);
         liTag.append(h4Tag);
         liTag.append(form);
         list.append(liTag);
         index++;
+
+        form.addEventListener('submit', function(event) {
+          event.preventDefault();
+          console.log('clicked.')
+
+          $.ajax({
+            url:    form.action,
+            method: form.method,
+            dataType: 'json',
+
+            // get the info from the hidden field and creates a URL encoded text string by serializing form values
+            data:  $(form).serialize()
+          }).done( function(data) {
+            console.log(data)
+
+            // shows increasing vote count 
+            location.reload();
+          })
+        });
+
       });
     });
+
+
 
   // });
 
